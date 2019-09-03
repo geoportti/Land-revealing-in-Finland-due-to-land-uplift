@@ -18,6 +18,21 @@ In this use case example we will calculate the yearly revealing of dry land due 
 - dryland_calculator5_taito.py Calculates the revealed dry land between given years.
 - result_gatherer.py Goes throught the result files and visualizes the results.
 
+## Workflow
+
+### 1. Prepare the 10m elevation data
+
+Because the 2m elevation model is not available everywhere in Finland, we need to use 10m elevation model at some areas. To make sure that we have the data when needed, we will resample and mask the 10m elevation model for the whole study area.
+
+### 2. Run the calculations
+
+### 3. Gather the results at your local computer
+
+
+
+
+
+
 
 [1]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-2-m
 [2]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-10-m
