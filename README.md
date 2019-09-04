@@ -54,15 +54,15 @@ Before we can begin the calculations we also need a 2m resolution raster layer o
 
 The first phase of the calculations between the dem layer and the isostacy layer is to define the paleotopography for every time period. 
 In this example we use 10 time periods between every 50 years from 200bp. to 700bp. The paleotopography can be calculated by multiplying the isostacy layer with the number of years and then extracting the isostacy layer form the present day demfile. Before extraction the isostacy values were converted to meteres. The change in the speed of isostacy after 1890 was also taken into account. The ten paleotopography layers for each grid ID were calculated as following:
-
- *dem_year = dem - ((isostacylayer*year)+(year-(year-(2019-1890)))/1000)*
- 
+```pythonscript
+ dem_year = dem - ((isostacylayer*year)+(year-(year-(2019-1890)))/1000)
+ ```
  ##### Sea level differences between consecutive paleotopographies
  
  In the next phase we want to calculate the difference in pixels that have values greater than 0 between consecutive paleotopographies. This way we can establish how many pixels were revealed during the 50 year time interval. When we multiply the difference with 4 and divide the result with 1000000, we will get the amount of revealed land in square kilometers. The calculations were done for all the 10 time intervals as followinG:
- 
- *change = (4*((0 < dem_year1).sum()-(0 < dem_year2).sum()))/1000000*
- 
+ ```pythonscript
+ change = (4*((0 < dem_year1).sum()-(0 < dem_year2).sum()))/1000000
+ ```
  
  
  
