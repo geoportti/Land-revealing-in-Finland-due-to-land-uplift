@@ -2,8 +2,7 @@
 
 ## Introduction
 In this use case example we will calculate the yearly revealing of dry land due to isostacy in Finland. 
-
-## 
+ 
 ## Data
 
 - [2m Elevation model][1] by National Land Survey of Finland. Data available in Taito.
@@ -12,14 +11,11 @@ In this use case example we will calculate the yearly revealing of dry land due 
 - Sea areas of the [Topographic Database][3] by the National Land Survey of Finland. Data available in Taito
 - Isostacy point data based on the NKG2016LU_lev landuplift data by the Nordic Geodetic Comission. Data available HERE
 
-## Scripts used
-- 10mDem_masker_resampler.py 10m dem data preparation.
-- dryland_calculator5_taito.py Calculates the revealed dry land between given years.
-- result_gatherer.py Goes throught the result files and visualizes the results.
-
 ## Workflow
 
 ### 1. Prepare the 10m elevation data
+
+Script used :  10mDem_masker_resampler.py
 
 Because the 2m elevation model is not available everywhere in Finland, we need to use 10m elevation model at some areas. To make sure that we have the data when needed, we will prepare it in advance. 
 
@@ -37,6 +33,8 @@ In the second phase the masked 10m dem files are resampled to 2m resolution. The
 
 
 ### 2. Run the calculator
+
+Script used: dryland_calculator.py
 
 #### Principals
 
@@ -67,10 +65,7 @@ The 10 resulting values are saved in text file with the grid cell id.
 
 ### 3. Gather the results at your local computer
 
-
-
-
-
+Script used: result_gatherer.py
 
 
 
