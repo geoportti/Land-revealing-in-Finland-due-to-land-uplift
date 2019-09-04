@@ -34,7 +34,7 @@ In the second phase the masked 10m dem files are resampled to 2m resolution. The
 
 ### 2. Run the calculator
 
-Script used: dryland_calculator.py
+Script used: dryland_calculator.py , calculator_batch
 
 #### Principals
 
@@ -66,6 +66,14 @@ The 10 resulting values are saved in text file with the grid cell id.
 ### 3. Gather the results at your local computer
 
 Script used: result_gatherer.py
+
+Because all the results are stored in seperate text files, we need to gather them together. Result gatherer will go through all the textfiles in the directory and gather the data into one table.
+
+After the results are gathered it is realtively easy to plot the results for example as bar plots:
+
+
+You can also export an shapefile merging the utm10 grid with the data you just created. This way you can visualize maps for example in QGIS or ArcMap:
+
 
 
 
