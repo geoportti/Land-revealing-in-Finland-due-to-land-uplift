@@ -9,7 +9,7 @@ In this use case example we will calculate the yearly revealing of dry land due 
 - [10m Elevation model][2] by National Land Survey of Finland. Data available in Taito.
 - TM35 map sheet division by the National Land Survey of Finland. Data available in the File service of open data.
 - Sea areas of the [Topographic Database][3] by the National Land Survey of Finland. Data available in Taito
-- Isostacy point data based on the NKG2016LU_lev landuplift data by the Nordic Geodetic Comission. Data available HERE
+- Isostacy point data based on the NKG2016LU_lev land uplift data by the Nordic Geodetic Comission. Data available HERE
 
 ## Workflow
 
