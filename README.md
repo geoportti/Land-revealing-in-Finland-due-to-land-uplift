@@ -27,17 +27,32 @@ Run the script 10mDem_masker_resampler.py. At the first phase the script will go
 
 - We are only intersted in dem files with minimum value less than 7.3. Higher demfiles would have no changes in them. The value is based   on the calculated maximum of land uplift in 700 years. 
 
-  (700yr x 9,34mm) + ((1890yr-(2019yr-700yr)) x 1mm) = 7109mm 
+  *(700yr x 9,34mm) + ((1890yr-(2019yr-700yr)) x 1mm) = 7109mm* 
 
   Where 9.34mm is the maximum value of yearly land uplif at the study area. Also the 1mm addition to land uplift values after year 1890   is taken into account (Ekman). Safety marginal of 0.2m was added to the result.
 
 - We are also only interested in dem files that have dry land in them. This is why the max value of the file has to be over 0m. 
 
-
 In the second phase the masked 10m dem files are resampled to 2m resolution. The 10m dem needs to be resampled to 2m resolution so we can make calculations between other layers. After resampling the files are renamed and saved as .tif files.   
 
 
-### 2. Run the calculations
+### 2. Run the calculator
+
+#### Principals
+
+You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs in 14 parallel jobs. The jobs are separated with the first stage of TM35 map sheet division: S4, R4, Q3, Q4, P3, N3, M3, L2, L3, L4, L5, K2, K3, K4. This way we will also limit the search to the coastal areas of Finland. 
+
+The actuall calculation of the land revealing is done in the UTM10 map division level, which means 6km x 6km grid squares that are named for example ”L5124E”. This is because the 2m dem is stored in files named and defined after this level of division. 
+
+The calculator goes through a file containing the ID ("LEHTITUNNU") and the geometry of UTM10 grid cells. Whenever a corresponding 2m dem file is found, it is masked and filtered just like 10m dem files previously. If a corresponding 2m dem file cannot be found, the calculator opens the allready resampled and masked 10m dem file and uses that in the calculations instead of the 2m dem.
+
+Before we can begin the calculations we also need a 2m resolution raster layer of the isostacy data. The isostacy raster is created on the fly with each iteration only to the area corresponding the dem file using linear interpolation. 
+
+#### Calculations
+
+
+
+
 
 ### 3. Gather the results at your local computer
 
