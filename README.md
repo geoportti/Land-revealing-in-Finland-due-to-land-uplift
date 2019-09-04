@@ -17,7 +17,7 @@ In this use case example we will calculate the yearly revealing of dry land due 
 
 ### 1. Prepare the 10m elevation data
 
-Script used :  10mDem_masker_resampler.py
+Script used :  [10mDem_masker_resampler.py][7]
 
 Because the 2m elevation model is not available everywhere in Finland, we need to use 10m elevation model at some areas. To make sure that we have the data when needed, we will prepare it in advance. 
 
@@ -89,3 +89,4 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 [4]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/result_gatherer.py
 [5]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/dryland_calculator.py
 [6]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/calculator_batch
+[7]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/10mDem_masker_resampler.py
