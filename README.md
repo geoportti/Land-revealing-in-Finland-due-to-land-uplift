@@ -65,7 +65,7 @@ The 10 resulting values are saved in text file with the grid cell id.
 
 ### 3. Gather the results at your local computer
 
-Script used: result_gatherer.py
+Script used: [result_gatherer.py][4]
 
 Because all the results are stored in seperate text files, we need to gather them together. Result gatherer will go through all the textfiles in the directory and gather the data into one table.
 
@@ -81,3 +81,4 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 [1]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-2-m
 [2]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-10-m
 [3]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/topographic-database
+[4]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/result_gatherer.py
