@@ -1,3 +1,5 @@
+<img src="https://github.com/geoportti/Logos/blob/master/geoportti_logo_300px.png">
+
 # Isostatic-land-revealing-in-Finland
 
 ## Introduction
@@ -70,6 +72,8 @@ Script used: [result_gatherer.py][4]
 Because all the results are stored in seperate text files, we need to gather them together. Result gatherer will go through all the textfiles in the directory and gather the data into one table.
 
 After the results are gathered it is realtively easy to plot the results for example as bar plots:
+
+
 
 
 You can also export an shapefile merging the utm10 grid with the data you just created. This way you can visualize maps for example in QGIS or ArcMap:
