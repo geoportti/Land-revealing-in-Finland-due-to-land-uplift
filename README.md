@@ -73,7 +73,7 @@ Because all the results are stored in seperate text files, we need to gather the
 
 After the results are gathered it is realtively easy to plot the results for example as bar plots:
 
-<img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/Yearly_revealing.png>
+<img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/Yearly_revealing.png">
 
 
 You can also export an shapefile merging the utm10 grid with the data you just created. This way you can visualize maps for example in QGIS or ArcMap:
