@@ -78,7 +78,7 @@ After the results are gathered it is realtively easy to plot the results for exa
 
 You can also export an shapefile merging the utm10 grid with the data you just created. This way you can visualize maps for example in QGIS or ArcMap:
 
-
+<img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/reveal_sum_small.png">
 
 
 
