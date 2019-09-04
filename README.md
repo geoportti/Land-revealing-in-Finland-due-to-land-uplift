@@ -81,6 +81,15 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 <img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/reveal_sum_small.png">
 
 
+#todo
+- kirjoita intro
+- testaa resampler batch
+- lataa grid ja isostasia aineisto
+- linkkaa aineistot
+- geoportti viite
+- linkki karttalehtijakoon
+
+
 
 
 [1]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-2-m
