@@ -8,7 +8,7 @@ In this use case example we will calculate the yearly revealing of dry land due 
 
 - [2m Elevation model][1] by National Land Survey of Finland. Data available in Taito.
 - [10m Elevation model][2] by National Land Survey of Finland. Data available in Taito.
-- TM35 map sheet division by the National Land Survey of Finland. Data available in Taito
+- TM35 map sheet division by the National Land Survey of Finland. Data available in the File service of open data.
 - Sea areas of the [Topographic Database][3] by the National Land Survey of Finland. Data available in Taito
 - Isostacy point data based on the NKG2016LU_lev landuplift data by the Nordic Geodetic Comission. Data available HERE
 
@@ -26,9 +26,9 @@ Because the 2m elevation model is not available everywhere in Finland, we need t
 Run the script 10mDem_masker_resampler.py. At the first phase the script will go through the directory of 10m dem files, mask the sea areas to value 0 with the intersecting sea area polygons. The masking to 0 is essentiall because the water areas of the laser scanning data include a lot of errors. Negative values are also converted to 0. The masked file is saved if it fills the following criteria:
 
 - We are only intersted in dem files with minimum value less than 7.3. Higher demfiles would have no changes in them. The value is based   on the calculated maximum of land uplift in 700 years. 
-
-  *(700yr x 9,34mm) + ((1890yr-(2019yr-700yr)) x 1mm) = 7109mm* 
-
+```pythonscript
+  (700yr x 9,34mm) + ((1890yr-(2019yr-700yr)) x 1mm) = 7109mm* 
+```
   Where 9.34mm is the maximum value of yearly land uplif at the study area. Also the 1mm addition to land uplift values after year 1890   is taken into account (Ekman). Safety marginal of 0.2m was added to the result.
 
 - We are also only interested in dem files that have dry land in them. This is why the max value of the file has to be over 0m. 
@@ -59,16 +59,15 @@ In this example we use 10 time periods between every 50 years from 200bp. to 700
  ```
  ##### Sea level differences between consecutive paleotopographies
  
- In the next phase we want to calculate the difference in pixels that have values greater than 0 between consecutive paleotopographies. This way we can establish how many pixels were revealed during the 50 year time interval. When we multiply the difference with 4 and divide the result with 1000000, we will get the amount of revealed land in square kilometers. The calculations were done for all the 10 time intervals as followinG:
+ In the next phase we want to calculate the difference in pixels that have values greater than 0 between consecutive paleotopographies. This way we can establish how many pixels were revealed during the 50 year time interval. When we multiply the difference with 4 and divide the result with 1000000, we will get the amount of revealed land in square kilometers. The calculations were done for all the 10 time intervals as following:
  ```pythonscript
  change = (4*((0 < dem_year1).sum()-(0 < dem_year2).sum()))/1000000
  ```
- 
- 
- 
-
+The 10 resulting values are saved in text file with the grid cell id. 
 
 ### 3. Gather the results at your local computer
+
+
 
 
 
