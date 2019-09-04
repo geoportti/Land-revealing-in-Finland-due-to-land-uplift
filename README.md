@@ -34,7 +34,7 @@ In the second phase the masked 10m dem files are resampled to 2m resolution. The
 
 ### 2. Run the calculator
 
-Script used: [dryland_calculator.py][5] , calculator_batch
+Script used: [dryland_calculator.py][5] , [calculator_batch][6]
 
 #### Principals
 
@@ -83,3 +83,4 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 [3]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/topographic-database
 [4]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/result_gatherer.py
 [5]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/dryland_calculator.py
+[6]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/calculator_batch
