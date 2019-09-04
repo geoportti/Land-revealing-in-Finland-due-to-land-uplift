@@ -40,18 +40,32 @@ In the second phase the masked 10m dem files are resampled to 2m resolution. The
 
 #### Principals
 
-You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs in 14 parallel jobs. The jobs are separated with the first stage of TM35 map sheet division: S4, R4, Q3, Q4, P3, N3, M3, L2, L3, L4, L5, K2, K3, K4. This way we will also limit the search to the coastal areas of Finland. 
+You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs in 14 parallel jobs. The jobs are separated with the first stage of TM35 map sheet division. This way we will also limit the search to the coastal areas of Finland. The used map sheets are: S4, R4, Q3, Q4, P3, N3, M3, L2, L3, L4, L5, K2, K3, K4.
 
 The actuall calculation of the land revealing is done in the UTM10 map division level, which means 6km x 6km grid squares that are named for example ”L5124E”. This is because the 2m dem is stored in files named and defined after this level of division. 
 
 The calculator goes through a file containing the ID ("LEHTITUNNU") and the geometry of UTM10 grid cells. Whenever a corresponding 2m dem file is found, it is masked and filtered just like 10m dem files previously. If a corresponding 2m dem file cannot be found, the calculator opens the allready resampled and masked 10m dem file and uses that in the calculations instead of the 2m dem.
 
-Before we can begin the calculations we also need a 2m resolution raster layer of the isostacy data. The isostacy raster is created on the fly with each iteration only to the area corresponding the dem file using linear interpolation. 
+Before we can begin the calculations we also need a 2m resolution raster layer of the isostacy data. The isostacy raster is created on the fly with each iteration only to the area corresponding the dem file by using linear interpolation. 
 
 #### Calculations
 
+##### Paleotopography of different time periods
 
+The first phase of the calculations between the dem layer and the isostacy layer is to define the paleotopography for every time period. 
+In this example we use 10 time periods between every 50 years from 200bp. to 700bp. The paleotopography can be calculated by multiplying the isostacy layer with the number of years and then extracting the isostacy layer form the present day demfile. Before extraction the isostacy values were converted to meteres. The change in the speed of isostacy after 1890 was also taken into account. The ten paleotopography layers for each grid ID were calculated as following:
 
+ *dem_year = dem - ((isostacylayer*year)+(year-(year-(2019-1890)))/1000)*
+ 
+ ##### Sea level differences between consecutive paleotopographies
+ 
+ In the next phase we want to calculate the difference in pixels that have values greater than 0 between consecutive paleotopographies. This way we can establish how many pixels were revealed during the 50 year time interval. When we multiply the difference with 4 and divide the result with 1000000, we will get the amount of revealed land in square kilometers. The calculations were done for all the 10 time intervals as followinG:
+ 
+ *change = (4*((0 < dem_year1).sum()-(0 < dem_year2).sum()))/1000000*
+ 
+ 
+ 
+ 
 
 
 ### 3. Gather the results at your local computer
