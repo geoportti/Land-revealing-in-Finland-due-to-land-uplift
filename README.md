@@ -17,7 +17,7 @@ In this use case example we will calculate the yearly revealing of dry land due 
 
 ### 1. Prepare the 10m elevation data
 
-Script used :  [10mDem_masker_resampler.py][7]
+Script used :  [10mDem_masker_resampler.py][7], 10dem_batch
 
 Because the 2m elevation model is not available everywhere in Finland, we need to use 10m elevation model at some areas. To make sure that we have the data when needed, we will prepare it in advance. 
 
