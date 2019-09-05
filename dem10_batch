@@ -1,0 +1,11 @@
+#!/bin/bash -l
+#SBATCH -J dem10_batch
+#SBATCH -e calculator_error_%j
+#SBATCH -o calculator_out_%j
+#SBATCH -t 2:00:00
+#SBATCH -n 1
+#SBATCH -p serial
+#SBATCH --mem=5000
+
+module load geoconda
+python 10mDem_masker_resampler.py $SLURM_ARRAY_TASK_ID
