@@ -9,7 +9,7 @@ In this use case example we will calculate the yearly revealing of dry land due 
 
 - [2m Elevation model][1] by National Land Survey of Finland. Data available in Taito.
 - [10m Elevation model][2] by National Land Survey of Finland. Data available in Taito.
-- [UTM map sheet division][9] by the National Land Survey of Finland. Data available in the File service of open data.
+- [UTM map sheet division][9] by the National Land Survey of Finland. Data available in the [File service of open data][10]. The needed   UTM_10 grid is stored for you in data folder. 
 - Sea areas of the [Topographic Database][3] by the National Land Survey of Finland. Data available in Taito
 - Isostacy point data based on the NKG2016LU_lev land uplift data by the Nordic Geodetic Comission. More about the data [here][8].
 
@@ -101,3 +101,4 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 [7]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/10mDem_masker_resampler.py
 [8]:https://link.springer.com/article/10.1007/s00190-019-01280-8
 [9]:https://www.maanmittauslaitos.fi/sites/maanmittauslaitos.fi/files/old/UTM_lehtijakopdf.pdf
+[10]:https://tiedostopalvelu.maanmittauslaitos.fi/tp/kartta
