@@ -3,7 +3,7 @@
 # Isostatic-land-revealing-in-Finland
 
 ## Introduction
-In this use case example we will calculate the yearly revealing of dry land due to isostacy in Finland. 
+In this use case example we will calculate the yearly revealing of dry land due to isostasy in Finland. 
  
 ## Data
 
@@ -11,7 +11,7 @@ In this use case example we will calculate the yearly revealing of dry land due 
 - [10m Elevation model][2] by National Land Survey of Finland. Data available in Taito.
 - [UTM map sheet division][9] by the National Land Survey of Finland. Data available in the [File service of open data][10]. The needed   UTM_10 grid is stored for you in [data][11] folder. 
 - Sea areas of the [Topographic Database][3] by the National Land Survey of Finland. Data available in Taito
-- [Isostacy point data][11] based on the NKG2016LU_lev land uplift data by the Nordic Geodetic Comission. The point data available in     data folder is allready cropped to cover only the coastal areas of Finland. Read more about the data [here][8].
+- [Isostasy point data][11] based on the NKG2016LU_lev land uplift data by the Nordic Geodetic Comission. The point data available in     data folder is allready cropped to cover only the coastal areas of Finland. Read more about the data [here][8].
 
 ## Workflow
 
