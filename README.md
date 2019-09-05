@@ -17,11 +17,11 @@ In this use case example we will calculate the yearly revealing of dry land due 
 
 ### 1. Prepare the 10m elevation data
 
-Script used :  [10mDem_masker_resampler.py][7], [dem10_batch][12]
+Scripts used :  [10mDem_masker_resampler.py][7], [dem10_batch][12]
 
 Because the 2m elevation model is not available everywhere in Finland, we need to use 10m elevation model at some areas. To make sure that we have the data when needed, we will prepare it in advance. 
 
-Run the script 10mDem_masker_resampler.py. At the first phase the script will go through the directory of 10m dem files, mask the sea areas to value 0 with the intersecting sea area polygons. The masking to 0 is essential because the water areas of the laser scanning data include a lot of errors. Negative values are also converted to 0. The masked file is saved if it fills the following criteria:
+Run the script 10mDem_masker_resampler.py using the dem10_batch. At the first phase the script will go through the directory of 10m dem files, mask the sea areas to value 0 with the intersecting sea area polygons. The masking to 0 is essential because the water areas of the laser scanning data include a lot of errors. Negative values are also converted to 0. The masked file is saved if it fills the following criteria:
 
 - We are only interested in dem files with minimum value less than 7.3. Higher dem files would have no changes in them. The value is based   on the calculated maximum of land uplift in 700 years. 
 ```pythonscript
@@ -33,10 +33,11 @@ Run the script 10mDem_masker_resampler.py. At the first phase the script will go
 
 In the second phase the masked 10m dem files are resampled to 2m resolution. The 10m dem needs to be resampled to 2m resolution so we can make calculations between other layers. After resampling the files are renamed and saved as .tif files.   
 
+TIP! If the batch job doesn't work because it contains dos line brakes instead of unix ones. Run command *dos2unix dem10_batch* and then try again.  
 
 ### 2. Run the calculator
 
-Script used: [dryland_calculator.py][5] , [calculator_batch][6]
+Scripts used: [dryland_calculator.py][5] , [calculator_batch][6]
 
 #### Principals
 
