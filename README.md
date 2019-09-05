@@ -65,11 +65,11 @@ In this example we use 10 time periods between every 50 years from 200bp. to 700
  ```
 The 10 resulting values are saved in text file with the grid cell id. 
 
-### 3. Gather the results at your local computer
+### 3. Gather the results
 
 Script used: [result_gatherer.py][4]
 
-Because all the results are stored in separate text files, we need to gather them together. Result gatherer will go through all the text files in the directory and gather the data into one table.
+Because all the results are stored in separate text files, we need to gather them together. Result gatherer will go through all the text files in the directory and gather the data into one table. This can be done for example at your local computer or in Taito through NoMachine Spyder interface. 
 
 After the results are gathered it is relatively easy to plot the results for example as bar plots:
 
