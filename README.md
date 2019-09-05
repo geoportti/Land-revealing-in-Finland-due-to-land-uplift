@@ -84,10 +84,8 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 #todo
 - kirjoita intro
 - testaa resampler batch
-- lataa grid ja isostasia aineisto
-- linkkaa aineistot
 - geoportti viite
-- linkki karttalehtijakoon
+
 
 
 
