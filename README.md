@@ -81,14 +81,13 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 <img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/reveal_sum_small.png">
 
 
+When using the scripts or CSC.s computation services, please cite the oGIIR project: "We made use of geospatial data/instructions/computing resources provided by the Open Geospatial Information Infrastructure for Research (oGIIR, urn:nbn:fi:research-infras-2016072513) funded by the Academy of Finland."
+
+Authored by Akseli Toikka and the Department of Geoinformatics and Cartography at FGI
+
 #todo
 - kirjoita intro
 - testaa resampler batch
-- geoportti viite
-
-
-
-
 
 [1]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-2-m
 [2]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-10-m
