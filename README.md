@@ -87,10 +87,6 @@ When using the scripts or CSC.s computation services, please cite the oGIIR proj
 
 Authored by Akseli Toikka and the Department of Geoinformatics and Cartography at FGI
 
-#todo
-- kirjoita intro
-- testaa resampler batch
-
 [1]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-2-m
 [2]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-10-m
 [3]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/topographic-database
