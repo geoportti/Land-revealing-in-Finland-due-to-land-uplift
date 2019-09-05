@@ -17,7 +17,7 @@ In this use case example we will calculate the yearly revealing of dry land due 
 
 ### 1. Prepare the 10m elevation data
 
-Script used :  [10mDem_masker_resampler.py][7], 10dem_batch
+Script used :  [10mDem_masker_resampler.py][7], [dem10_batch][12]
 
 Because the 2m elevation model is not available everywhere in Finland, we need to use 10m elevation model at some areas. To make sure that we have the data when needed, we will prepare it in advance. 
 
@@ -101,3 +101,4 @@ Authored by Akseli Toikka and the Department of Geoinformatics and Cartography a
 [9]:https://www.maanmittauslaitos.fi/sites/maanmittauslaitos.fi/files/old/UTM_lehtijakopdf.pdf
 [10]:https://tiedostopalvelu.maanmittauslaitos.fi/tp/kartta
 [11]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/tree/master/data
+[12]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/dem10_batch
