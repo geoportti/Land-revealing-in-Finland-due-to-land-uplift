@@ -25,7 +25,7 @@ Run the script 10mDem_masker_resampler.py using the dem10_batch. At the first ph
 
 - We are only interested in dem files with minimum value less than 7.3. Higher dem files would have no changes in them. The value is based   on the calculated maximum of land uplift in 700 years. 
 ```pythonscript
-  (700yr x 9,34mm) + ((1890yr-(2019yr-700yr)) x 1mm) = 7109mm* 
+  (700yr x 9,34mm) + ((1890yr-(2019yr-700yr)) x 1mm) = 7109mm
 ```
   Where 9.34mm is the maximum value of yearly land uplift at the study area. Also the 1mm addition to land uplift values after year 1890   is taken into account (Ekman). Safety marginal of 0.2m was added to the result.
 
