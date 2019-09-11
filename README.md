@@ -3,7 +3,15 @@
 # Isostatic-land-revealing-in-Finland
 
 ## Introduction
-In this use case example we will calculate the yearly revealing of dry land due to isostasy in Finland. 
+In this use case example we will calculate the yearly revealing of dry land due to land uplift in Finland. 
+
+Even though the yearly speed of land uplift in Finland is relatively well studied, the amount of revealing land has been a bit problematic to calculate. With the current open data and high performance computing services of CSC, we are able to compute some estimates of the yearly land revealing. 
+
+The batymetric data of Finnish coastal areas is relatively inaccurate and uneven, this is why we approach the issue using the terrestrial elevation models. This means we will travel back in time and estimate the current state of land revealing by calculating the amount of land revealing in the past. We will dio this by constructing paleotopographies and comparing them to each other. In the computing of paleotopographies we will make use of current terrestrial elevation models and land uplift model. 
+
+As the elevation models tend to contain errors and false information at the sea areas, the sea areas will be masked to value 0 with the sea areas of Topographic Database of Finland. Because the coastal line of the Topographic Database doesn't allways match with the digital elevation models, we will start our calculations from the year 200 before present (bp.). From there we will construct 10 paleotopographies between every 50 years finnishing at year 700bp. 
+
+Current land uplift rates can be used untill the year 1890. From there on, we will add 1 mm to the yarly rates as suggested by 
  
 ## Data
 
