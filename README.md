@@ -21,6 +21,7 @@ Current land uplift rates can be used untill the year 1890. From there on, we wi
 - Sea areas of the [Topographic Database][3] by the National Land Survey of Finland. Data available in Taito
 - [Isostasy point data][11] based on the NKG2016LU_lev land uplift data by the Nordic Geodetic Comission. The point data available in     data folder is allready cropped to cover only the coastal areas of Finland. Read more about the data [here][8].
 
+
 ## Workflow
 
 ### 1. Prepare the 10m elevation data
