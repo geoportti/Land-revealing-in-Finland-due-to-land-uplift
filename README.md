@@ -66,6 +66,9 @@ In this example we use 10 time periods between every 50 years from 200bp. to 700
 ```pythonscript
  dem_year = dem - ((isostasylayer*year)+(year-(year-(2019-1890)))/1000)
  ```
+ 
+<img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/paleotopo.png">
+ 
  ##### Sea level differences between consecutive paleotopographies
  
  In the next phase we want to calculate the difference in pixels that have values greater than 0 between consecutive paleotopographies. This way we can establish how many pixels were revealed during the 50 year time interval. When we multiply the difference with 4 and divide the result with 1000000, we will get the amount of revealed land in square kilometers. The calculations were done for all the 10 time intervals as following:
@@ -109,3 +112,4 @@ Ekman, M (2001) Calculation of Historical Shore Levels in Fennoscandia due to Po
 [10]:https://tiedostopalvelu.maanmittauslaitos.fi/tp/kartta
 [11]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/tree/master/data
 [12]:https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/dem10_batch
+
