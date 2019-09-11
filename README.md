@@ -68,7 +68,7 @@ In this example we use 10 time periods between every 50 years from 200bp. to 700
  ```
  
 <img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/paleotopo.png">
-*Image presenting the present day elevation model and three different paleotopographies of the same maps sheet. Can you spot the          changes in the topography and sea level?*
+Image presenting the present day elevation model and three different paleotopographies of the same maps sheet. Can you spot the     changes in the topography and sea level?
  
  ##### Sea level differences between consecutive paleotopographies
  
