@@ -31,7 +31,7 @@ Run the script 10mDem_masker_resampler.py using the dem10_batch. At the first ph
 
 - We are also only interested in dem files that have dry land in them. This is why the max value of the file has to be over 0m. 
 
-In the second phase the masked 10m dem files are resampled to 2m resolution. The 10m dem needs to be resampled to 2m resolution so we can make calculations between other layers. After resampling the files are renamed and saved as .tif files.   
+In the second phase the masked 10m dem files are resampled to 2m resolution. The 10m dem needs to be resampled to 2m resolution so we can make calculations between other layers. After resampling the files are renamed and saved.   
 
 TIP! If the batch job doesn't work because it contains dos line brakes instead of unix ones. Run command *dos2unix dem10_batch* and then try again.  
 
@@ -41,7 +41,7 @@ Scripts used: [dryland_calculator.py][5] , [calculator_batch][6]
 
 #### Principals
 
-You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs in 14 parallel jobs. The jobs are separated with the first stage of UTM map sheet division. This way we will also limit the search to the coastal areas of Finland. The used map sheets are: S4, R4, Q3, Q4, P3, N3, M3, L2, L3, L4, L5, K2, K3, K4.
+You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs as an array job. The jobs are separated with the first stage of UTM map sheet division. This way we will also limit the search to the coastal areas of Finland. The used map sheets are: S4, R4, Q3, Q4, P3, N3, M3, L2, L3, L4, L5, K2, K3, K4.
 
 The actual calculation of the land revealing is done in the UTM10 map division level, which means 6km x 6km grid squares that are named for example ”L5124E”. This is because the 2m dem is stored in files named and defined after this level of division. 
 
