@@ -21,6 +21,8 @@ Current land uplift rates can be used untill the year 1890. From there on, we wi
 - Sea areas of the [Topographic Database][3] by the National Land Survey of Finland. Data available in Taito
 - [Isostasy point data][11] based on the NKG2016LU_lev land uplift data by the Nordic Geodetic Comission. The point data available in     data folder is allready cropped to cover only the coastal areas of Finland. Read more about the data [here][8].
 
+<img src= "https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/NKG2016LU_lev.png">
+
 
 ## Workflow
 
@@ -51,6 +53,8 @@ Scripts used: [dryland_calculator.py][5] , [calculator_batch][6]
 #### Principals
 
 You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs as an array job. The jobs are separated with the first stage of UTM map sheet division. This way we will also limit the search to the coastal areas of Finland. The used map sheets are: S4, R4, Q3, Q4, P3, N3, M3, L2, L3, L4, L5, K2, K3, K4.
+
+
 
 The actual calculation of the land revealing is done in the UTM10 map division level, which means 6km x 6km grid squares that are named for example ”L4314A”. This is because the 2m dem is stored in files named and defined after this level of division. 
 
