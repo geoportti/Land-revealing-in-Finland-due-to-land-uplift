@@ -51,7 +51,7 @@ Scripts used: [dryland_calculator.py][5] , [calculator_batch][6]
 
 You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs as an array job. The jobs are separated with the first stage of UTM map sheet division. This way we will also limit the search to the coastal areas of Finland. The used map sheets are: S4, R4, Q3, Q4, P3, N3, M3, L2, L3, L4, L5, K2, K3, K4.
 
-The actual calculation of the land revealing is done in the UTM10 map division level, which means 6km x 6km grid squares that are named for example ”L5124E”. This is because the 2m dem is stored in files named and defined after this level of division. 
+The actual calculation of the land revealing is done in the UTM10 map division level, which means 6km x 6km grid squares that are named for example ”L4314A”. This is because the 2m dem is stored in files named and defined after this level of division. 
 
 The calculator goes through a file containing the ID ("LEHTITUNNU") and the geometry of UTM10 grid cells. Whenever a corresponding 2m dem file is found, it is masked and filtered just like 10m dem files previously. If a corresponding 2m dem file cannot be found, the calculator opens the already resampled and masked 10m dem file and uses that in the calculations instead of the 2m dem.
 
