@@ -3,7 +3,7 @@
 # Isostatic-land-revealing-in-Finland
 
 ## Introduction
-In this use case example we will calculate the yearly revealing of dry land due to land uplift in Finland. This is done by constructing paleotopographies and calclulating the areal change between different time periods. According to the results, the estimation of present yearly formation of dry land is approximately 8.9 km2. The yearly land revealing doesn't seem to be consistent and is increasing when we move towards present day.
+In this use case example we will calculate the yearly revealing of dry land due to land uplift in Finland. This is done by constructing paleotopographies and calclulating the areal change between different time periods. 
 
 Even though the yearly speed of land uplift in Finland is relatively well studied, the amount of revealing land has been a bit problematic to calculate. With the current national data sets and high performance computing services of CSC, we are able to compute some estimates of the yearly land revealing. 
 
@@ -100,6 +100,7 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 
 <img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/reveal_sum_small2.png">
 
+According to the results, the estimation of present yearly formation of dry land is approximately 8.9 km2. The yearly land revealing doesn't seem to be consistent and is increasing when we move towards present day. As expected, the revealing of new land is strongest at the western coast of Finland where also the speed of land uplift is greatest. 
 
 #### References:
 Ekman, M (2001) Calculation of Historical Shore Levels in Fennoscandia due to Postglacial Rebound. Small Publications in Historical Geophysics 8
