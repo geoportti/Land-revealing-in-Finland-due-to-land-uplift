@@ -104,6 +104,7 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 #### References:
 Ekman, M (2001) Calculation of Historical Shore Levels in Fennoscandia due to Postglacial Rebound. Small Publications in Historical Geophysics 8
 
+#### Terms of use:
 When using the scripts or CSC.s computation services, please cite the oGIIR project: "We made use of geospatial data/instructions/computing resources provided by CSC and the Open Geospatial Information Infrastructure for Research (oGIIR, urn:nbn:fi:research-infras-2016072513) funded by the Academy of Finland."
 
 Authored by Akseli Toikka and the Department of Geoinformatics and Cartography at FGI
