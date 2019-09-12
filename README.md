@@ -7,9 +7,9 @@ In this use case example we will calculate the yearly revealing of dry land due 
 
 Even though the yearly speed of land uplift in Finland is relatively well studied, the amount of revealing land has been a bit problematic to calculate. With the current national data sets and high performance computing services of CSC, we are able to compute some estimates of the yearly land revealing. 
 
-The batymetric data of Finnish coastal areas is relatively inaccurate and unevenly distributed, this is why we approach the issue using the terrestrial elevation models. This means we will travel back in time and estimate the current state of land revealing by calculating the amount of land revealing in the past. We will dio this by constructing paleotopographies and comparing them to each other. In the computing of paleotopographies we will make use of current terrestrial elevation models and land uplift model. 
+The batymetric data of Finnish coastal areas is relatively inaccurate and unevenly distributed, this is why we approach the issue using the terrestrial elevation models. This means we will travel back in time and estimate the current state of land revealing by calculating the amount of land revealing in the past. We will do this by constructing paleotopographies and comparing them to each other. In the computing of paleotopographies we will make use of current terrestrial elevation models and land uplift model. 
 
-As the elevation models tend to contain errors and false information at the water areas, the sea areas will be masked to value 0 with the sea polygons of Topographic Database of Finland. Because the coastline of the Topographic Database doesn't allways match with the digital elevation models, we will start our calculations from the year 200 bp. (before present). From there we will construct 10 paleotopographies between every 50 years finnishing at year 700bp. 
+As the elevation models tend to contain errors and false information at the water areas, the sea areas will be masked to value 0 with the sea polygons of Topographic Database of Finland. Because the coastline of the Topographic Database doesn't always match with the digital elevation models, we will start our calculations from the year 200 bp when the coastline was located further inland than it is today. (before present). From there we will construct 10 paleotopographies between every 50 years finishing at year 700bp. 
 
 Current land uplift rates can be used untill the year 1890. From there on, we will add 1 mm to the yarly rates as suggested by Ekman (2001). 
  
@@ -44,8 +44,7 @@ Run the script 10mDem_masker_resampler.py using the dem10_batch. At the first ph
 - We are also only interested in dem files that have dry land in them. This is why the max value of the file has to be over 0m. 
 
 In the second phase the masked 10m dem files are resampled to 2m resolution. The 10m dem needs to be resampled to 2m resolution so we can make calculations between other layers. After resampling the files are renamed and saved.   
-
-TIP! If the batch job doesn't work because it contains dos line brakes instead of unix ones. Run command *dos2unix dem10_batch* and then try again.  
+  
 
 ### 2. Run the calculator
 
@@ -78,9 +77,9 @@ Image presenting the present day elevation model and three different paleotopogr
  
  ##### Sea level differences between consecutive paleotopographies
  
- In the next phase we want to calculate the difference in pixels that have values greater than 0 between consecutive paleotopographies. This way we can establish how many pixels were revealed during the 50 year time interval. When we multiply the difference with 4 and divide the result with 1000000, we will get the amount of revealed land in square kilometers. The calculations were done for all the 10 time intervals as following:
+ In the next phase we want to calculate the difference in pixels that have values greater than 0 between consecutive paleotopographies. This way we can establish how many pixels were revealed during the 50 year time interval. Then we get the amount of revealed land by multiplying the number of changed pixels with their area in square kilometres (4m^2 / 1000000). The calculations are done for all the 10 time intervals as following:
  ```pythonscript
- change = (4*((0 < dem_year1).sum()-(0 < dem_year2).sum()))/1000000
+ change = ((0 < dem_year1).sum()-(0 < dem_year2).sum())*4/1000000
  ```
 The 10 resulting values are saved in text file with the grid cell id and stored in folders based on the map sheet division. One result text file will look something like this:
 ```pythonscript
@@ -101,13 +100,13 @@ You can also export an shapefile merging the utm10 grid with the data you just c
 
 <img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/reveal_sum_small2.png">
 
-When using the scripts or CSC.s computation services, please cite the oGIIR project: "We made use of geospatial data/instructions/computing resources provided by CSC and the Open Geospatial Information Infrastructure for Research (oGIIR, urn:nbn:fi:research-infras-2016072513) funded by the Academy of Finland."
-
-Authored by Akseli Toikka and the Department of Geoinformatics and Cartography at FGI
 
 #### References:
 Ekman, M (2001) Calculation of Historical Shore Levels in Fennoscandia due to Postglacial Rebound. Small Publications in Historical Geophysics 8
 
+When using the scripts or CSC.s computation services, please cite the oGIIR project: "We made use of geospatial data/instructions/computing resources provided by CSC and the Open Geospatial Information Infrastructure for Research (oGIIR, urn:nbn:fi:research-infras-2016072513) funded by the Academy of Finland."
+
+Authored by Akseli Toikka and the Department of Geoinformatics and Cartography at FGI
 
 [1]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-2-m
 [2]:https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/elevation-model-10-m
