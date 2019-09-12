@@ -9,7 +9,7 @@ Even though the yearly speed of land uplift in Finland is relatively well studie
 
 The batymetric data of Finnish coastal areas is relatively inaccurate and unevenly distributed, this is why we approach the issue using the terrestrial elevation models. This means we will travel back in time and estimate the current state of land revealing by calculating the amount of land revealing in the past. We will dio this by constructing paleotopographies and comparing them to each other. In the computing of paleotopographies we will make use of current terrestrial elevation models and land uplift model. 
 
-As the elevation models tend to contain errors and false information at the water areas, the sea areas will be masked to value 0 with the sea areas of Topographic Database of Finland. Because the coastline of the Topographic Database doesn't allways match with the digital elevation models, we will start our calculations from the year 200 bp. (before present). From there we will construct 10 paleotopographies between every 50 years finnishing at year 700bp. 
+As the elevation models tend to contain errors and false information at the water areas, the sea areas will be masked to value 0 with the sea polygons of Topographic Database of Finland. Because the coastline of the Topographic Database doesn't allways match with the digital elevation models, we will start our calculations from the year 200 bp. (before present). From there we will construct 10 paleotopographies between every 50 years finnishing at year 700bp. 
 
 Current land uplift rates can be used untill the year 1890. From there on, we will add 1 mm to the yarly rates as suggested by Ekman (2001). 
  
@@ -19,10 +19,10 @@ Current land uplift rates can be used untill the year 1890. From there on, we wi
 - [10m Elevation model][2] by National Land Survey of Finland. Data available in Taito.
 - [UTM map sheet division][9] by the National Land Survey of Finland. Data available in the [File service of open data][10]. The needed   UTM_10 grid is stored for you in [data][11] folder. 
 - Sea areas of the [Topographic Database][3] by the National Land Survey of Finland. Data available in Taito
-- [Isostasy point data][11] based on the NKG2016LU_lev land uplift data by the Nordic Geodetic Comission. The point data available in     data folder is allready cropped to cover only the coastal areas of Finland. Read more about the data [here][8].
+- [Isostasy point data][11] based on the NKG2016LU_lev land uplift data by the Nordic Geodetic Comission. The point data available in     data folder is allready cropped to cover only the coastal areas of Finland. Read more about the data in [here][8].
 
 <img src= "https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/NKG2016LU_lev.png">
-Image of the land uplift data.
+Image of the used land uplift data by Nordic Geodetic Comission.
 
 
 ## Workflow
@@ -39,7 +39,7 @@ Run the script 10mDem_masker_resampler.py using the dem10_batch. At the first ph
 ```pythonscript
   (700yr x 9,34mm) + ((1890yr-(2019yr-700yr)) x 1mm) = 7109mm
 ```
-  Where 9.34mm is the maximum value of yearly land uplift at the study area. Also the 1mm addition to land uplift values after year 1890   is taken into account (Ekman). Safety marginal of 0.2m was added to the result.
+  Where 9.34mm is the maximum value of yearly land uplift at the study area. Also the 1mm addition to land uplift values after year 1890   is taken into account (Ekman 2001). Safety marginal of 0.2m was added to the result.
 
 - We are also only interested in dem files that have dry land in them. This is why the max value of the file has to be over 0m. 
 
@@ -53,7 +53,7 @@ Scripts used: [dryland_calculator.py][5] , [calculator_batch][6]
 
 #### Principals
 
-You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs as an array job. The jobs are separated with the first stage of UTM map sheet division. This way we will also limit the search to the coastal areas of Finland. The used map sheets and their ID.s are shown on the map.
+You can run the dryland_calculator using the calculator_batch file in Taito. The script is designed so that it runs as an array job. The jobs are separated with the first two letters of UTM10 grid ID. This way we will also limit the search to the coastal areas of Finland. The used map sheets and their ID.s are shown on the map.
 
 <img src="https://github.com/geoportti/Isostatic-land-revealing-in-Finland/blob/master/Images/used_sheets.png">
 
@@ -67,7 +67,7 @@ Before we can begin the calculations we also need a 2m resolution raster layer o
 
 ##### Paleotopography of different time periods
 
-The first phase of the calculations between the dem layer and the isostasy layer is to define the paleotopography for every time period. 
+The first phase of the calculations between the dem layer and the isostasy layer is to construct a paleotopography for every time period. 
 In this example we use 10 time periods between every 50 years from 200bp. to 700bp. The paleotopography can be calculated by multiplying the isostasy layer with the number of years and then extracting the isostasy layer form the present day dem file. Before extraction the isostasy values were converted to meters. The change in the speed of isostasy after 1890 was also taken into account. The ten paleotopography layers for each grid ID were calculated as following:
 ```pythonscript
  dem_year = dem - ((isostasylayer*year)+(year-(year-(2019-1890)))/1000)
@@ -82,8 +82,10 @@ Image presenting the present day elevation model and three different paleotopogr
  ```pythonscript
  change = (4*((0 < dem_year1).sum()-(0 < dem_year2).sum()))/1000000
  ```
-The 10 resulting values are saved in text file with the grid cell id. 
-
+The 10 resulting values are saved in text file with the grid cell id and stored in folders based on the map sheet division. One result text file will look something like this:
+```pythonscript
+0.084368,0.07966,0.075436,0.070012,0.071252,0.063976,0.059912,0.05324,0.046804,0.041728,K3222F
+```
 ### 3. Gather the results
 
 Script used: [result_gatherer.py][4]
